@@ -4,6 +4,8 @@ class Card {
 
     var value: Value = Value.UNKNOWN
     var suit: Suit = Suit.UNKNOWN
+    var imageResource = R.drawable.back2
+    var code: String = "Xx"
 
     constructor(handCode: String) {
         value = getValueForCharacter(handCode[0])
@@ -15,7 +17,11 @@ class Card {
         suit = cardSuit
     }
 
-    fun imageResource(): Int {
+    init {
+        imageResource = updateImageResource()
+    }
+
+    private fun updateImageResource(): Int {
         return when (suit) {
             Suit.SPADES -> imageResourceSpades()
             Suit.HEARTS -> imageResourceHearts()

@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="card"
+            type="nl.appautomatic.heartthinking.Card"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageViewHoleCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@{card.imageResource, default=@drawable/back2}"/>
+    </RelativeLayout>
+</layout>

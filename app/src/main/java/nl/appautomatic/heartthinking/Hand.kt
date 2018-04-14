@@ -1,5 +1,7 @@
 package nl.appautomatic.heartthinking
 
+import android.databinding.BindingAdapter
+
 class Hand {
     var players: ArrayList<Player> = ArrayList()
     var pot = 0
@@ -21,4 +23,5 @@ class Hand {
     fun numberOfPlayers(): Int {
         return players.size
     }
+
 }
