@@ -88,7 +88,7 @@ Seat 6: artemvolk14 folded before Flop (didn't bet)"""
         lineIndex++
 
         val heroPlayerLineSplit = lines[lineIndex].split(" ")
-        val heroPlayerIndex = parsedHand.getIndexForPlayer(heroPlayerLineSplit[2])
+        val heroPlayerIndex = parsedHand.getIndexForPlayerWithName(heroPlayerLineSplit[2])
         parsedHand.players[heroPlayerIndex].isHero = true
         parsedHand.players[heroPlayerIndex].holeCardOne = Card(heroPlayerLineSplit[3].substringAfter("["))
         parsedHand.players[heroPlayerIndex].holeCardTwo = Card(heroPlayerLineSplit[4].substringBefore("]"))

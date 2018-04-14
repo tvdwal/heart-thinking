@@ -7,7 +7,7 @@ class Hand {
     var smallBlind = 0.0
     var bigBlind = 0.0
 
-    fun getIndexForPlayer(name: String): Int {
+    fun getIndexForPlayerWithName(name: String): Int {
         var index = 0
         for (p in players) {
             if (p.name == name) {
@@ -16,5 +16,9 @@ class Hand {
             index++
         }
         return -1
+    }
+
+    fun numberOfPlayers(): Int {
+        return players.size
     }
 }
