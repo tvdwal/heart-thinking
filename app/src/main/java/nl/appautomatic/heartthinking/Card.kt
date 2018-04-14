@@ -2,8 +2,8 @@ package nl.appautomatic.heartthinking
 
 class Card {
 
-    var value: Value = Value.INVALID
-    var suit: Suit = Suit.INVALID
+    var value: Value = Value.UNKNOWN
+    var suit: Suit = Suit.UNKNOWN
 
     constructor(handCode: String) {
         value = getValueForCharacter(handCode[0])
@@ -22,7 +22,7 @@ class Card {
             Suit.CLUBS -> imageResourceClubs()
             Suit.DIAMONDS -> imageResourceDiamonds()
             else -> {
-                android.R.drawable.stat_notify_error
+                R.drawable.back2
             }
         }
     }
@@ -43,7 +43,7 @@ class Card {
                 Value.KING -> R.drawable.spades_king
                 Value.ACE -> R.drawable.spades_ace
             else -> {
-                android.R.drawable.stat_notify_error
+                R.drawable.back2
             }
         }
     }
@@ -64,7 +64,7 @@ class Card {
             Value.KING -> R.drawable.hearts_king
             Value.ACE -> R.drawable.hearts_ace
             else -> {
-                android.R.drawable.stat_notify_error
+                R.drawable.back2
             }
         }
     }
@@ -85,7 +85,7 @@ class Card {
             Value.KING -> R.drawable.clubs_king
             Value.ACE -> R.drawable.clubs_ace
             else -> {
-                android.R.drawable.stat_notify_error
+                R.drawable.back2
             }
         }
     }
@@ -106,7 +106,7 @@ class Card {
             Value.KING -> R.drawable.diamonds_king
             Value.ACE -> R.drawable.diamonds_ace
             else -> {
-                android.R.drawable.stat_notify_error
+                R.drawable.back2
             }
         }
     }
@@ -127,7 +127,7 @@ class Card {
             'K' -> Value.KING
             'A' -> Value.ACE
             else -> {
-                Value.INVALID
+                Value.UNKNOWN
             }
         }
     }
@@ -140,7 +140,7 @@ class Card {
             'd' -> Suit.DIAMONDS
 
             else -> {
-                Suit.INVALID
+                Suit.UNKNOWN
             }
         }
     }
