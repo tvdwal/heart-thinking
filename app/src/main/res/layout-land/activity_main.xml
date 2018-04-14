@@ -1,70 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="horizontal"
+    tools:context=".MainActivity"
+    android:weightSum="100">
 
-    <include
-        android:id="@+id/include1"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="25"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/include1"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/include3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include1" />
+        <include
+            android:id="@+id/include2"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <include
-        android:id="@+id/include3"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <include
+            android:id="@+id/include3"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
-    <include
-        layout="@layout/layout_table"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/include5"
-        app:layout_constraintStart_toEndOf="@+id/include2"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="50">
+        <include
+            layout="@layout/layout_table"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
-    <include
-        android:id="@+id/include4"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="25"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/include4"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <include
-        android:id="@+id/include5"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/include6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include4" />
+        <include
+            android:id="@+id/include5"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-    <include
-        android:id="@+id/include6"
-        layout="@layout/layout_player"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <include
+            android:id="@+id/include6"
+            layout="@layout/layout_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
