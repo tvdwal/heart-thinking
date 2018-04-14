@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var textFileParser = TextFileParser()
-        textViewHelloWorld.text = textFileParser.getNextHand()
+        textViewHelloWorld.text = textFileParser.getNextHand().players[0].name
     }
 }

@@ -50,12 +50,50 @@ Seat 6: artemvolk14 folded before Flop (didn't bet)"""
         hands.add(testHand)
     }
 
-    fun getNextHand() : String {
+    fun getNextHand() : Hand {
+        var parsedHand = Hand()
         val hand: String = hands[handsIndex]
         val lines = hand.split("\n")
+        var lineIndex = 1
 
-        val buttonIndex = lines[1].substringAfter("#")[0]
+        //TODO: Replace if-statements with regex whenever possible
 
-        return buttonIndex.toString()
+        parsedHand.buttonIndex = lines[lineIndex].substringAfterLast("#")[0].toString().toInt()
+
+        lineIndex++
+        var stacksizes = ArrayList<String>()
+        while (lines[lineIndex].startsWith("Seat ")) {
+            stacksizes.add(lines[lineIndex])
+            lineIndex++
+        }
+
+        for (str in stacksizes) {
+            var split = str.split(" ")
+            if (!split[3].contains("$")) {
+                //TODO: Add support for spaces in player names
+                throw Exception("No support for players with spaces in their name so far...")
+            }
+            var p = Player(false, split[2], split[3].substringAfter("$").toDouble())
+            parsedHand.players.add(p)
+        }
+
+        parsedHand.smallBlind = lines[lineIndex].substringAfterLast("$").toDouble()
+        lineIndex++
+        parsedHand.bigBlind = lines[lineIndex].substringAfterLast("$").toDouble()
+        lineIndex++
+
+        if (!lines[lineIndex].contains("HOLE CARDS")) {
+            throw Exception("Something went wrong during hand-parsing before the 'HOLE CARDS' line")
+        }
+        lineIndex++
+
+        val heroPlayerLineSplit = lines[lineIndex].split(" ")
+        val heroPlayerIndex = parsedHand.getIndexForPlayer(heroPlayerLineSplit[2])
+        parsedHand.players[heroPlayerIndex].isHero = true
+        parsedHand.players[heroPlayerIndex].holeCardOne = Card(heroPlayerLineSplit[3].substringAfter("["))
+        parsedHand.players[heroPlayerIndex].holeCardTwo = Card(heroPlayerLineSplit[4].substringBefore("]"))
+
+        return parsedHand
     }
+
 }
