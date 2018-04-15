@@ -9,16 +9,25 @@
         android:roundIcon="@drawable/spades_ace"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".MainActivity">
+
+        </activity>
+
         <activity
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"
-            android:name=".MainActivity">
+            android:name=".HandViewerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>

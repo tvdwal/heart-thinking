@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="hand"
+            type="nl.appautomatic.heartthinking.Hand"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".HandViewerActivity"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/include1"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[0]}"/>
+
+            <include
+                android:id="@+id/include2"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[1]}"/>
+
+            <include
+                android:id="@+id/include3"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[2]}"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70">
+            <include
+                layout="@layout/layout_table"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/include4"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[3]}"/>
+
+            <include
+                android:id="@+id/include5"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[4]}"/>
+
+            <include
+                android:id="@+id/include6"
+                layout="@layout/layout_player"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                bind:player="@{hand.players[5]}"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

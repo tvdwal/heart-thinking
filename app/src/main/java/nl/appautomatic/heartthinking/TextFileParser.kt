@@ -1,5 +1,7 @@
 package nl.appautomatic.heartthinking
 
+import java.io.InputStream
+
 class TextFileParser() {
     val testHand = """PokerStars Zoom Hand #185173807438:  Hold'em No Limit ($0.01/$0.02) - 2018/04/13 17:21:17 CET [2018/04/13 11:21:17 ET]
 Table 'Halley' 6-max Seat #1 is the button
@@ -51,9 +53,12 @@ Seat 6: artemvolk14 folded before Flop (didn't bet)"""
     }
 
     fun getNextHand() : Hand {
+        return parseHand(testHand)
+    }
+
+    private fun parseHand(source: String): Hand {
         var parsedHand = Hand()
-        val hand: String = hands[handsIndex]
-        val lines = hand.split("\n")
+        val lines = source.split("\n")
         var lineIndex = 1
 
         //TODO: Replace if-statements with regex whenever possible
