@@ -1,6 +1,7 @@
 package nl.appautomatic.heartthinking.poker
 
 class Hand {
+    var handId = ""
     var players: ArrayList<Player> = ArrayList()
     var pot = 0
     var buttonIndex = 0

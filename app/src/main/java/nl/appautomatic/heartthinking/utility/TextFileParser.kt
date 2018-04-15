@@ -47,23 +47,83 @@ Seat 3: nlgoldfinger (big blind) showed [Kh Td] and lost with high card Ace
 Seat 4: 81denis81 folded before Flop (didn't bet)
 Seat 5: BrownieBash showed [8s Ts] and won ($0.36) with a pair of Eights
 Seat 6: artemvolk14 folded before Flop (didn't bet)"""
-    var hands: ArrayList<String> = ArrayList()
+    var testHand2 = """"PokerStars Zoom Hand #185173787084:  Hold'em No Limit (${'$'}0.01/${'$'}0.02) - 2018/04/13 17:20:41 CET [2018/04/13 11:20:41 ET]
+Table 'Halley' 6-max Seat #1 is the button
+Seat 1: Shinto61 ($1.98 in chips)
+Seat 2: Mariyan1987 ($1.96 in chips)
+Seat 3: Wenrex ($4.32 in chips)
+Seat 4: Yoshka.SB ($2 in chips)
+Seat 5: BrownieBash ($2.09 in chips)
+Seat 6: pyshista ($2.63 in chips)
+Mariyan1987: posts small blind $0.01
+Wenrex: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to BrownieBash [9c 2h]
+Yoshka.SB: folds
+BrownieBash has timed out
+BrownieBash: folds
+pyshista: folds
+Shinto61: folds
+Mariyan1987: folds
+Uncalled bet ($0.01) returned to Wenrex
+Wenrex collected $0.02 from pot
+Wenrex: doesn't show hand
+*** SUMMARY ***
+Total pot $0.02 | Rake $0
+Seat 1: Shinto61 (button) folded before Flop (didn't bet)
+Seat 2: Mariyan1987 (small blind) folded before Flop
+Seat 3: Wenrex (big blind) collected ($0.02)
+Seat 4: Yoshka.SB folded before Flop (didn't bet)
+Seat 5: BrownieBash folded before Flop (didn't bet)
+Seat 6: pyshista folded before Flop (didn't bet)
+""""
+    var testHand3 = """"PokerStars Zoom Hand #185173784845:  Hold'em No Limit (${'$'}0.01/${'$'}0.02) - 2018/04/13 17:20:37 CET [2018/04/13 11:20:37 ET]
+Table 'Halley' 6-max Seat #1 is the button
+Seat 1: BrownieBash ($2.09 in chips)
+Seat 2: qqqqall2 ($1.83 in chips)
+Seat 3: Petrovich415 ($2.17 in chips)
+Seat 4: d@mir-01 ($2.08 in chips)
+Seat 5: Egen74 ($2.51 in chips)
+Seat 6: 031968 ($1.23 in chips)
+qqqqall2: posts small blind $0.01
+Petrovich415: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to BrownieBash [Qd 6s]
+d@mir-01: raises $0.04 to $0.06
+Egen74: folds
+031968: folds
+BrownieBash: folds
+qqqqall2: folds
+Petrovich415: folds
+Uncalled bet ($0.04) returned to d@mir-01
+d@mir-01 collected $0.05 from pot
+d@mir-01: doesn't show hand
+*** SUMMARY ***
+Total pot $0.05 | Rake $0
+Seat 1: BrownieBash (button) folded before Flop (didn't bet)
+Seat 2: qqqqall2 (small blind) folded before Flop
+Seat 3: Petrovich415 (big blind) folded before Flop
+Seat 4: d@mir-01 collected ($0.05)
+Seat 5: Egen74 folded before Flop (didn't bet)
+Seat 6: 031968 folded before Flop (didn't bet)
+""""
+    var hands: ArrayList<Hand> = ArrayList()
     var handsIndex: Int = 0
 
     init {
-        hands.add(testHand)
-    }
-
-    fun getNextHand() : Hand {
-        return parseHand(testHand)
+        hands.add(parseHand(testHand))
+        hands.add(parseHand(testHand2))
+        hands.add(parseHand(testHand3))
     }
 
     private fun parseHand(source: String): Hand {
         var parsedHand = Hand()
         val lines = source.split("\n")
-        var lineIndex = 1
-
+        var lineIndex = 0
         //TODO: Replace if-statements with regex whenever possible
+
+        parsedHand.handId = lines[lineIndex].substringAfter("#").substringBefore(":")
+        lineIndex++
 
         parsedHand.buttonIndex = lines[lineIndex].substringAfterLast("#")[0].toString().toInt()
 

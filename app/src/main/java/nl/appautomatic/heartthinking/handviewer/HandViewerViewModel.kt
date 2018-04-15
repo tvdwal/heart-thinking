@@ -9,7 +9,7 @@ class HandViewerViewModel: ViewModel() {
     private var handSource: MutableLiveData<Hand> = MutableLiveData()
 
     init {
-        handSource.value = TextFileParser().getNextHand()
+        handSource.value = TextFileParser().hands[0]
     }
 
     fun getHand(): MutableLiveData<Hand> {

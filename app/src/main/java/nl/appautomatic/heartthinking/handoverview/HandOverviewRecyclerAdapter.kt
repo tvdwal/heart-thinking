@@ -12,15 +12,12 @@ import nl.appautomatic.heartthinking.poker.Hand
 
 class HandOverviewRecyclerAdapter(val viewModel: HandOverviewViewModel, val context: Context) : RecyclerView.Adapter<HandOverviewHolder>() {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HandOverviewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.layout_hand_overview_recycler_item, parent, false)
         v.setOnClickListener {
             val i = Intent(context, HandViewerActivity::class.java)
             context.startActivity(i)
         }
-        Toast.makeText(context, "Nr of items: " + itemCount, Toast.LENGTH_SHORT)
         return HandOverviewHolder(v)
     }
 
@@ -30,7 +27,8 @@ class HandOverviewRecyclerAdapter(val viewModel: HandOverviewViewModel, val cont
 
     override fun onBindViewHolder(holder: HandOverviewHolder, position: Int) {
         val hand: Hand = viewModel.getHands().value!![position]
-        holder.textViewBigBlind.text = hand.buttonIndex.toString()
+        holder.textViewHandId.text = hand.handId
+        holder.textViewBigBlind.text = hand.bigBlind.toString()
         holder.textViewSmallBlind.text = hand.smallBlind.toString()
     }
 

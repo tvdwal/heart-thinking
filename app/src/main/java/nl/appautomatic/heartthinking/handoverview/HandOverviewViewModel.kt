@@ -9,8 +9,7 @@ class HandOverviewViewModel: ViewModel() {
     private var source: MutableLiveData<ArrayList<Hand>> = MutableLiveData()
 
     init {
-        source.value = ArrayList()
-        source.value!!.add(TextFileParser().getNextHand())
+        source.value = TextFileParser().hands
     }
 
     fun getHands(): MutableLiveData<ArrayList<Hand>> {
