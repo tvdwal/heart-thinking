@@ -1,6 +1,6 @@
 @file:Suppress("PLUGIN_WARNING")
 
-package nl.appautomatic.heartthinking
+package nl.appautomatic.heartthinking.handviewer
 
 import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
@@ -10,6 +10,10 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_hand_viewer.*
 import kotlinx.android.synthetic.main.layout_card.view.*
 import kotlinx.android.synthetic.main.layout_player.view.*
+import nl.appautomatic.heartthinking.BR
+import nl.appautomatic.heartthinking.poker.Hand
+import nl.appautomatic.heartthinking.poker.Player
+import nl.appautomatic.heartthinking.R
 import nl.appautomatic.heartthinking.databinding.ActivityMainBinding
 
 class HandViewerActivity : AppCompatActivity() {

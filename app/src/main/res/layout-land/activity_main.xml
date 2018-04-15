@@ -5,7 +5,7 @@
     <data>
         <variable
             name="hand"
-            type="nl.appautomatic.heartthinking.Hand"/>
+            type="nl.appautomatic.heartthinking.poker.Hand"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"

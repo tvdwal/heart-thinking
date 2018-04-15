@@ -19,7 +19,7 @@
         <activity
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden"
-            android:name=".HandViewerActivity">
+            android:name=".handviewer.HandViewerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

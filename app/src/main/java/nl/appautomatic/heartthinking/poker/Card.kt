@@ -1,4 +1,6 @@
-package nl.appautomatic.heartthinking
+package nl.appautomatic.heartthinking.poker
+
+import nl.appautomatic.heartthinking.R
 
 class Card {
 

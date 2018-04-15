@@ -1,6 +1,4 @@
-package nl.appautomatic.heartthinking
-
-import android.databinding.BindingAdapter
+package nl.appautomatic.heartthinking.poker
 
 class Hand {
     var players: ArrayList<Player> = ArrayList()

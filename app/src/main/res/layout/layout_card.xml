@@ -3,7 +3,7 @@
     <data>
         <variable
             name="card"
-            type="nl.appautomatic.heartthinking.Card"/>
+            type="nl.appautomatic.heartthinking.poker.Card"/>
     </data>
     <RelativeLayout
         android:layout_width="match_parent"

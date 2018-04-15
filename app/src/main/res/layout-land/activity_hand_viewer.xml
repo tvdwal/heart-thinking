@@ -5,13 +5,13 @@
     <data>
         <variable
             name="hand"
-            type="nl.appautomatic.heartthinking.Hand"/>
+            type="nl.appautomatic.heartthinking.poker.Hand"/>
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        tools:context=".HandViewerActivity"
+        tools:context=".handviewer.HandViewerActivity"
         android:weightSum="100">
 
         <LinearLayout

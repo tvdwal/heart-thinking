@@ -1,4 +1,4 @@
-package nl.appautomatic.heartthinking
+package nl.appautomatic.heartthinking.poker
 
 class Player(isHero: Boolean, name: String, stackSize: Double) {
 

@@ -1,6 +1,8 @@
-package nl.appautomatic.heartthinking
+package nl.appautomatic.heartthinking.utility
 
-import java.io.InputStream
+import nl.appautomatic.heartthinking.poker.Card
+import nl.appautomatic.heartthinking.poker.Hand
+import nl.appautomatic.heartthinking.poker.Player
 
 class TextFileParser() {
     val testHand = """PokerStars Zoom Hand #185173807438:  Hold'em No Limit ($0.01/$0.02) - 2018/04/13 17:21:17 CET [2018/04/13 11:21:17 ET]
