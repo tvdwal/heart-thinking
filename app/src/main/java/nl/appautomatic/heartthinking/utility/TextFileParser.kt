@@ -116,6 +116,14 @@ Seat 6: 031968 folded before Flop (didn't bet)
         hands.add(parseHand(testHand3))
     }
 
+    fun getHandForHandId(handId: String): Hand {
+        for (hand in hands) {
+            if (hand.handId == handId)
+                return hand
+        }
+        return Hand()
+    }
+
     private fun parseHand(source: String): Hand {
         var parsedHand = Hand()
         val lines = source.split("\n")

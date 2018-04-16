@@ -15,11 +15,11 @@ class HandOverviewRecyclerAdapter(val viewModel: HandOverviewViewModel, val cont
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HandOverviewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        var binding = DataBindingUtil.inflate<LayoutHandOverviewRecyclerItemBinding>(inflater, R.layout.layout_hand_overview_recycler_item, parent, false)
+        val binding = DataBindingUtil.inflate<LayoutHandOverviewRecyclerItemBinding>(inflater, R.layout.layout_hand_overview_recycler_item, parent, false)
         binding.root.setOnClickListener {
             val i = Intent(context, HandViewerActivity::class.java)
+            i.putExtra("HAND_ID", binding.hand!!.handId)
             context.startActivity(i)
-
         }
         return HandOverviewHolder(binding)
     }

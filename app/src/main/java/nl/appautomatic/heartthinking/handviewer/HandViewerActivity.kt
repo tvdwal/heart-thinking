@@ -28,6 +28,7 @@ class HandViewerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         handViewerViewModel = ViewModelProviders.of(this).get(HandViewerViewModel::class.java)
+        handViewerViewModel.setSourceForHandId(intent.getStringExtra("HAND_ID"))
         val hand: Hand = handViewerViewModel.getHand().value!!
 
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
