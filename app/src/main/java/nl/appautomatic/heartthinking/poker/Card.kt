@@ -12,19 +12,17 @@ class Card {
     constructor(handCode: String) {
         value = getValueForCharacter(handCode[0])
         suit = getSuitForCharacter(handCode[1])
+        updateImageResource()
     }
 
     constructor(cardValue: Value, cardSuit: Suit) {
         value = cardValue
         suit = cardSuit
+        updateImageResource()
     }
 
-    init {
-        imageResource = updateImageResource()
-    }
-
-    private fun updateImageResource(): Int {
-        return when (suit) {
+    private fun updateImageResource() {
+        imageResource = when (suit) {
             Suit.SPADES -> imageResourceSpades()
             Suit.HEARTS -> imageResourceHearts()
             Suit.CLUBS -> imageResourceClubs()
