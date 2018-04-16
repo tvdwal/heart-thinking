@@ -23,4 +23,12 @@ class Hand {
         return players.size
     }
 
+    fun getHeroPlayer(): Player? {
+       for (p in players) {
+           if (p.isHero) {
+               return p
+           }
+       }
+       return null
+    }
 }

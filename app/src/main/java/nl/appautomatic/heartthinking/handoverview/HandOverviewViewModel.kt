@@ -7,7 +7,7 @@ import nl.appautomatic.heartthinking.utility.TextFileParser
 
 class HandOverviewViewModel: ViewModel() {
     private var source: MutableLiveData<ArrayList<Hand>> = MutableLiveData()
-    val parser = TextFileParser()
+    private val parser = TextFileParser()
 
     init {
         source.value = ArrayList()

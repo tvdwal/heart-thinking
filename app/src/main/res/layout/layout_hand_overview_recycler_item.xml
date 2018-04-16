@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textViewRecyclerItemHandId"
-        android:layout_width="wrap_content"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="hand"
+            type="nl.appautomatic.heartthinking.poker.Hand"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hand ID"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textViewRecyclerItemSmallBlind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Small Blind"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hand.handId}"/>
 
-    <TextView
-        android:id="@+id/textViewRecyclerItemBigBlind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Big Blind"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hand.getHeroPlayer().name}"/>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Double.toString(hand.smallBlind)}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Double.toString(hand.bigBlind)}"/>
+
+    </LinearLayout>
+</layout>

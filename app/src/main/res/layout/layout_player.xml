@@ -46,10 +46,6 @@
                 layout="@layout/layout_card"
                 bind:card="@{player.holeCardTwo}"/>
 
-
-
-
-
         </LinearLayout>
 
     </LinearLayout>
