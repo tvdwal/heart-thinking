@@ -2,6 +2,7 @@ package nl.appautomatic.heartthinking.handoverview
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_hand_overview.*
 import nl.appautomatic.heartthinking.R
 import nl.appautomatic.heartthinking.poker.Hand
+import nl.appautomatic.heartthinking.utility.ParserService
 
 class HandOverviewActivity : AppCompatActivity() {
 
@@ -36,6 +38,8 @@ class HandOverviewActivity : AppCompatActivity() {
         handler.postDelayed(Runnable {
             handOverviewViewModel.addHand()
         }, 5000)
+
+        ParserService.startActionParseHands(this, "", 2)
     }
 
 }

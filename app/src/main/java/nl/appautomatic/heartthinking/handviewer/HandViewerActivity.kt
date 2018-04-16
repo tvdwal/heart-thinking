@@ -1,5 +1,3 @@
-@file:Suppress("PLUGIN_WARNING")
-
 package nl.appautomatic.heartthinking.handviewer
 
 import android.arch.lifecycle.ViewModelProviders
